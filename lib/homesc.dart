@@ -10,7 +10,7 @@ import 'homesc.dart';
 
 
 class MyApp extends StatelessWidget {
-  static final String title = '';
+  static final String title = 'asdasd';
 
   @override
   Widget build(BuildContext context) => MaterialApp(
