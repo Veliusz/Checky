@@ -3,9 +3,12 @@ import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/colors.dart';
+import 'package:localdeal/chat.dart';
 import 'insert.dart';
 import 'moreinformation.dart';
 import 'homesc.dart';
+import 'listchat.dart';
+import 'profile.dart';
 
 void main() {
   runApp(imp());
