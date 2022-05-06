@@ -1,20 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import "dart:math";
-import 'main.dart';
+import 'lobby.dart';
 
 // ignore: camel_case_types
-class chatpage extends StatefulWidget {
-  const chatpage({Key? key}) : super(key: key);
+class Chatscreen extends StatefulWidget {
+  const Chatscreen({Key? key}) : super(key: key);
 
   @override
-  State<chatpage> createState() => _chatpageState();
+  State<Chatscreen> createState() => _chatpageState();
 }
 
-class _chatpageState extends State<chatpage> {
+class _chatpageState extends State<Chatscreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         title: "",
         home: Scaffold(
           appBar: AppBar(

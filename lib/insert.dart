@@ -2,20 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import "dart:math";
 
+import 'package:localdeal/widget/navbar.dart';
+
 
 // ignore: camel_case_types
-class imp extends StatefulWidget {
-  const imp({ Key? key }) : super(key: key);
+class InsertScreen extends StatefulWidget {
+  const InsertScreen({ Key? key }) : super(key: key);
 
   @override
-  State<imp> createState() => _impState();
+  State<InsertScreen> createState() => _impState();
 }
 
-class _impState extends State<imp> {
+class _impState extends State<InsertScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-         title: "",
+      debugShowCheckedModeBanner: false,
+      title: "",
       home: Scaffold(
           appBar: AppBar(
             title: const Text("Checky APP"),
@@ -39,22 +42,7 @@ class _impState extends State<imp> {
             ],
             
           ),
-          bottomNavigationBar:
-            BottomNavigationBar(items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-           icon: Icon(Icons.home),
-            label: 'Home',
-            
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Account',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-          ),
-        ]),
+          bottomNavigationBar: BottomNavigationBarChecky(),
     ),
       theme: ThemeData(primarySwatch: Colors.green)
     );

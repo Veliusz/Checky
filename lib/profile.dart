@@ -1,21 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:localdeal/insert.dart';
+import 'package:localdeal/lobby.dart';
 import "dart:math";
 
 import 'package:localdeal/moreinformation.dart';
 
 // ignore: camel_case_types
-class profilepage extends StatefulWidget {
-  const profilepage({Key? key}) : super(key: key);
+class Profilescreen extends StatefulWidget {
+  const Profilescreen({Key? key}) : super(key: key);
 
   @override
-  State<profilepage> createState() => _profilepageState();
+  State<Profilescreen> createState() => _profilepageState();
 }
 
-class _profilepageState extends State<profilepage> {
+class _profilepageState extends State<Profilescreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: "",
         home: Scaffold(
           appBar: AppBar(
@@ -67,12 +70,27 @@ class _profilepageState extends State<profilepage> {
                 height: 30,
               ),
               FloatingActionButton(
-                onPressed: () {},
-                child: Icon(Icons.add)
-                
-                
-              )
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) {
+                    return InsertScreen();
+                  }));
+                },
+                child: Icon(Icons.add),
+              ),
             ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.red,
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return Lobbyscreen();
+                }),
+              );
+            },
+            child: Icon(Icons.exit_to_app),
           ),
         ),
         theme: ThemeData(primarySwatch: Colors.green));

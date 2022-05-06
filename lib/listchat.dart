@@ -1,20 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import "dart:math";
-import 'main.dart';
+import 'lobby.dart';
 
 // ignore: camel_case_types
-class listchatpage extends StatefulWidget {
-  const listchatpage({Key? key}) : super(key: key);
+class Listchatscreen extends StatefulWidget {
+  const Listchatscreen({Key? key}) : super(key: key);
 
   @override
-  State<listchatpage> createState() => _listchatpageState();
+  State<Listchatscreen> createState() => _listchatpageState();
 }
 
-class _listchatpageState extends State<listchatpage> {
+class _listchatpageState extends State<Listchatscreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: "",
         home: Scaffold(
           appBar: AppBar(
@@ -33,6 +34,18 @@ class _listchatpageState extends State<listchatpage> {
               listchat(),
             ],
           ),
+          floatingActionButton: FloatingActionButton(
+                backgroundColor: Colors.red,
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return Lobbyscreen();
+                    }),
+                  );
+                },
+                child: Icon(Icons.exit_to_app),
+              ),
         ),
         theme: ThemeData(primarySwatch: Colors.green));
   }
@@ -147,7 +160,12 @@ Widget listchat() {
                         image: AssetImage('assets/profile.png'),
                         fit: BoxFit.fitWidth),
                     borderRadius: BorderRadius.all(Radius.elliptical(64, 64)),
-                  ))),
-        ])),
-  );
+                  )
+                  )
+                  ),
+        ],
+        ),
+        ),
+
+  );  
 }
